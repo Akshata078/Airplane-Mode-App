@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-12-02 21:46:17.227522",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{\"columns\":[{\"label\":\"airport\",\"fieldname\":\"airport\",\"id\":\"airport\",\"name\":\"airport\",\"width\":null,\"editable\":false,\"compareValue\":null},{\"label\":\"Total Shops\",\"fieldname\":\"total_shops\",\"id\":\"total_shops\",\"name\":\"Total Shops\",\"width\":null,\"editable\":false,\"compareValue\":null},{\"label\":\"available_shops\",\"fieldname\":\"available_shops\",\"id\":\"available_shops\",\"name\":\"available_shops\",\"width\":null,\"editable\":false,\"compareValue\":null},{\"label\":\"occupied_shops\",\"fieldname\":\"occupied_shops\",\"id\":\"occupied_shops\",\"name\":\"occupied_shops\",\"width\":null,\"editable\":false,\"compareValue\":null}],\"filters\":{}}",
+ "letterhead": null,
+ "modified": "2024-12-02 21:50:48.166572",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "shop",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    airport,\n    count(airport) as \"Total Shops\",\n    COUNT(CASE WHEN status = 'Available' THEN 1 END) AS available_shops,\n    COUNT(CASE WHEN status = 'Occupied' THEN 1 END) AS occupied_shops\nFROM \n    `tabAirport Shop`\nGROUP BY \n    airport;\n",
+ "ref_doctype": "Airport Shop",
+ "reference_report": "",
+ "report_name": "shop",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

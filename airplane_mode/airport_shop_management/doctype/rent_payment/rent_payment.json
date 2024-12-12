@@ -1,0 +1,205 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tenant_name}-{shop_name}",
+ "creation": "2024-11-06 22:36:41.945827",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rent_payment_section",
+  "shop",
+  "payment_date",
+  "reciept_number",
+  "column_break_bmgi",
+  "tenant",
+  "contract_reference",
+  "payment_status",
+  "payment_method",
+  "tenant_information_section",
+  "tenant_name",
+  "address",
+  "column_break_zlju",
+  "phone",
+  "email",
+  "shop_information_section",
+  "shop_name",
+  "shop_number",
+  "column_break_wjqk",
+  "shop_address",
+  "status",
+  "contract_details_section",
+  "contract_reference_number",
+  "rent_amount",
+  "column_break_mwmq",
+  "payment_frequency"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "reciept_number",
+   "fieldtype": "Data",
+   "label": "Reciept Number"
+  },
+  {
+   "fieldname": "column_break_bmgi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant"
+  },
+  {
+   "fieldname": "contract_reference",
+   "fieldtype": "Link",
+   "label": "Contract Reference",
+   "options": "Contract"
+  },
+  {
+   "fetch_from": "contract_reference.payment_method",
+   "fieldname": "payment_method",
+   "fieldtype": "Data",
+   "label": "Payment Method"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPaid"
+  },
+  {
+   "fieldname": "rent_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Rent Payment"
+  },
+  {
+   "fieldname": "tenant_information_section",
+   "fieldtype": "Section Break",
+   "label": "Tenant Information"
+  },
+  {
+   "fetch_from": "tenant.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name"
+  },
+  {
+   "fetch_from": "tenant.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_zlju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "tenant.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "shop_information_section",
+   "fieldtype": "Section Break",
+   "label": "Shop Information"
+  },
+  {
+   "fetch_from": "shop.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "label": "Shop Name"
+  },
+  {
+   "fetch_from": "shop.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "label": "Shop Number"
+  },
+  {
+   "fieldname": "column_break_wjqk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shop.shop_location",
+   "fieldname": "shop_address",
+   "fieldtype": "Data",
+   "label": "Shop Address"
+  },
+  {
+   "fetch_from": "shop.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Details"
+  },
+  {
+   "fetch_from": "contract_reference.contract_reference_number",
+   "fieldname": "contract_reference_number",
+   "fieldtype": "Data",
+   "label": "Contract Reference Number"
+  },
+  {
+   "fetch_from": "contract_reference.rent_amount",
+   "fieldname": "rent_amount",
+   "fieldtype": "Data",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "column_break_mwmq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contract_reference.payment_frequency",
+   "fieldname": "payment_frequency",
+   "fieldtype": "Data",
+   "label": "Payment Frequency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-03 13:55:52.501748",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

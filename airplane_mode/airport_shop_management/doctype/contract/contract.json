@@ -1,0 +1,180 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{tenant_name}-{contract_reference_number}",
+ "creation": "2024-11-13 09:59:35.066543",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_section",
+  "contract_reference_number",
+  "start_date",
+  "payment_frequency",
+  "tenant",
+  "column_break_spfv",
+  "payment_method",
+  "end_date",
+  "shop",
+  "rent_amount",
+  "tenant_information_section",
+  "tenant_name",
+  "address",
+  "column_break_yvyv",
+  "email",
+  "phone",
+  "shop_information_section",
+  "shop_area",
+  "shop_address",
+  "column_break_xdho",
+  "shop_number",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_reference_number",
+   "fieldtype": "Data",
+   "label": "Contract Reference Number"
+  },
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant",
+   "unique": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Airport Shop"
+  },
+  {
+   "fieldname": "payment_frequency",
+   "fieldtype": "Select",
+   "label": "Payment Frequency",
+   "options": "Monthly\nQuarterly"
+  },
+  {
+   "fieldname": "column_break_spfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Bank Transfer\nCash\nCheque"
+  },
+  {
+   "fieldname": "tenant_information_section",
+   "fieldtype": "Section Break",
+   "label": "Tenant Information"
+  },
+  {
+   "fieldname": "column_break_yvyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "tenant.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "shop_information_section",
+   "fieldtype": "Section Break",
+   "label": "Shop Information"
+  },
+  {
+   "fetch_from": "shop.shop_area",
+   "fieldname": "shop_area",
+   "fieldtype": "Data",
+   "label": "Shop Area"
+  },
+  {
+   "fieldname": "column_break_xdho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "shop.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "label": "Shop Number"
+  },
+  {
+   "fetch_from": "shop.status",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fetch_from": "tenant.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "label": "Tenant Name"
+  },
+  {
+   "fetch_from": "shop.shop_location",
+   "fieldname": "shop_address",
+   "fieldtype": "Data",
+   "label": "Shop Address"
+  },
+  {
+   "fetch_from": "tenant.address",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "contract_section",
+   "fieldtype": "Section Break",
+   "label": "Contract"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-03 13:37:50.435081",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

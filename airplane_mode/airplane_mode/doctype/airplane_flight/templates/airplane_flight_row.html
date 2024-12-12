@@ -1,0 +1,7 @@
+<div>
+	<h4>{{doc.airplane}}</h4>
+	<p>{{doc.source_airport_code}} &#8594; {{doc.destination_airport_code}}</p>
+	<p>{{frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY")}} &#9474; {{doc.time_of_departure}} &#9474; {{frappe.utils.format_duration(doc.duration)}}</p>
+	<a href="{{ doc.route }}" style="color: blue;">View Flight</a>
+</div>
+<!-- this is a sample default list template -->
